@@ -15,7 +15,6 @@ from models.review import Review
 from models import storage
 import re
 
-
 class HBNBCommand(cmd.Cmd):
     """The class that represents the entry point of the command
     interpreter. It inherits Cmd class of python's cmd module.
@@ -34,7 +33,7 @@ class HBNBCommand(cmd.Cmd):
         class_name = arg
         if not class_name:
             print("** class name missing **")
-            return
+             return
         classes = [
                 "BaseModel", "User", "Place", "State",
                 "City", "Amenity", "Review"
@@ -273,14 +272,14 @@ class HBNBCommand(cmd.Cmd):
         else:
             instance_obj = Review(**instance)
         instance_obj.save()
-    
+
     def do_count(self, arg):
         """Retrieve the number of instances of a class
         Format: count <class name>
         """
         if not arg:
             print("** class name missing **")
-            return 
+            return
         classes = [
                 "BaseModel", "User", "Place", "State",
                 "City", "Amenity", "Review"
@@ -350,7 +349,6 @@ class HBNBCommand(cmd.Cmd):
         is entered and the user press ENTER
         """
         pass
-
 
 if __name__ == "__main__":
     HBNBCommand().cmdloop()
